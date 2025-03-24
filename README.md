@@ -111,16 +111,16 @@ $ python app.py --text "Put face gandalf logo on the t-shirt" --files model3.jpe
 **Objective**: Transform a 2D image of jeans into a high-quality 3D model for use in an online store. The 3D model should showcase realistic textures, folds, and shading, allowing customers to view the product from multiple angles.
 
 ```python
-$ python app.py --text "I have a product image of jeans, and I need to transform it into a high-quality 3D model for use in an online store. The 3D model should be realistic, with accurate textures, folds, and shading to showcase the jeans in a visually appealing way. The goal is to make the jeans look as lifelike as possible, so customers can view them from multiple angles (front, back, side) and get a clear understanding of the product's design ." --files jeans.jpeg     
+$ python app.py --text "Make this 3D, visible from top point, perfect for website online shopping for quick check how the clothing looks like in 3d"  --file jacket.jpeg    
 ```
 
 ## Input
 
-![Jeans](https://i.postimg.cc/Zn24sB9m/jeans.jpg)
+![Jeans](https://i.postimg.cc/KcwQVqL6/jacket.jpg)
 
 ## Output
 
-![](https://i.postimg.cc/zBsHdb81/ai-xd38hpdc.png)
+![](https://i.postimg.cc/rsrpPPTy/ai-muuewq44.png)
 
 ## Case #8: Generate description and hashtags
 
@@ -148,6 +148,58 @@ This isn't just a top; it's a statement!
 Slip into this fierce leopard print and watch heads turn. The purr-fect blend of comfort and bold design, it's guaranteed to elevate your everyday look from drab to **DRAMA!** Whether you're hitting the city streets or just want to add some spice to your Zoom calls, this top is your secret weapon for instant confidence. Don't just follow the trends, **lead the pack!** Grab yours now before it's gone!
 
 #LeopardLove #WildStyle #FierceFashion #MustHave #AddToCart
+
+## Case #9 Sketch To Product
+
+**Objective**: Create a realistic clothing design from sketch.
+
+```python
+$ python app.py --text "Breathtaking elven wedding gown inspired by Lord of the Rings, majestic and ethereal, elegant flowing silhouette with intricate leaf/vine embroidery in gold/silver, delicate silk-chiffon fabric with celestial glow, fitted elven corset bodice, cascading waterfall skirt with translucent layers, gemstone embellishments (emerald/moonstone), mallorn leaf motifs, haute couture fantasy elegance, Galadriel/Arwen-inspired, luminous texture, magical realism, faint aurora shimmer, color palette of ivory with metallic accents, ethereal and timeless, otherworldly beauty, ultra-detailed 4K" --files sketch.webp
+
+```
+
+## Input
+
+![](https://i.postimg.cc/bN5WdnYc/sketch.png)
+
+## Output
+
+![](https://i.postimg.cc/qvCYK7gt/ai-ouclo1pw.png)
+
+## Case #10 Fabric To Product
+
+**Objective**: Create a realistic clothing design based on fabric pattern.
+
+
+```python
+$ python app.py --text "Generate a high-quality hoodie using the provided Gondor-inspired fabric texture. The design should feature: a tailored fit with structured shoulders, elongated hood with subtle elven-inspired points, fabric draping that shows the texture's White Tree motif prominently on the chest, silver-thread embroidery along seams resembling Númenórean fortifications, functional lacing at neckline with metallic aglets, and integrated fabric belt at waist. Maintain the original fabric's color palette (pearl white, navy, silver) while adding realistic cloth physics for movement. Photorealistic 8K render on a male model with noble posture, slightly weathered look to suggest practical use, background blurred to focus on garment details." --files ai_ffxtxfzx.png
+```
+
+## Input
+
+![](https://i.postimg.cc/pyNsPfxP/ai-ffxtxfzx.png)
+
+## Output
+
+![](https://i.postimg.cc/43NRCgBB/ai-ha1s7n8e.png)
+
+## Case #11 Reference Images To Single Product
+
+**Objective**: Create a clothing based on n reference images.
+
+
+```python
+$ python app.py --text "Generate a uniform inspired by the provided three reference images, combining their best elements into a single design" --files assassin.jpg dune.jpeg jedi.png     
+```
+
+## Input
+
+| ![assassin](https://i.postimg.cc/Kjkyqhm4/assassin.jpg) | ![dune](https://i.postimg.cc/nzwJGhb6/dune.jpg) | ![jedi](https://i.postimg.cc/RF0mtn87/jedi.png) |
+|---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
+
+## Output
+
+![](https://i.postimg.cc/jdfbyT8F/ai-r59a-6ep.png)
 
 
 
