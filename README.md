@@ -202,5 +202,30 @@ $ python app.py --text "Generate a uniform inspired by the provided three refere
 ![](https://i.postimg.cc/jdfbyT8F/ai-r59a-6ep.png)
 
 
+# Case #11 Object detection
+
+**Objective**: Detect objects on the image and prepare list with name and description for each of them.
+
+```python
+$ python app.py --text "Can you detect all clothing object then make a list and with name and short description?"  --file ai_v1k1nvfn.png 
+```
+
+## Input
+
+![](https://i.postimg.cc/NFZ5V8pG/ai-v1k1nvfn.png)
+
+## Output
+
+```
+Here's a list of the clothing objects detected in the image:
+
+1. **Maxi Dress:** A long, sleeveless dress with a V-neck
+line and a gathered or pleated bodice. It has a flowy skirt with a tiered ruffle at the hem and features a small blue and white pattern.
+2. **Sandals:** Open-toed footwear with straps across the foot. They appear to be black or dark-colored with a somewhat chunky sole.
+3. **Hat:** A wide-brimmed straw hat with a contrasting black band around the crown.
+4. **Sunglasses:** Round, dark-lensed sunglasses with a metallic or light-colored frame.
+```
+
+
 
 
