@@ -122,6 +122,33 @@ $ python app.py --text "I have a product image of jeans, and I need to transform
 
 ![](https://i.postimg.cc/zBsHdb81/ai-xd38hpdc.png)
 
+## Case #8: Generate description and hashtags
+
+**Objective**: Generate catchy description and hashtags of the product.
+
+
+```python
+$ python app.py --text "Generate product description and hashtags for online shopping website, make it super energetic, captivating and catchy, we want to user's to but this product" --files shirt.jpeg
+
+```
+
+## Input
+
+![Shirt](https://i.postimg.cc/nc9Hjk5h/shirt.jpg)
+
+## Output
+
+
+Unleash Your Inner Wildcat!
+
+Ready to ROAR with style? 
+
+This isn't just a top; it's a statement! 
+
+Slip into this fierce leopard print and watch heads turn. The purr-fect blend of comfort and bold design, it's guaranteed to elevate your everyday look from drab to **DRAMA!** Whether you're hitting the city streets or just want to add some spice to your Zoom calls, this top is your secret weapon for instant confidence. Don't just follow the trends, **lead the pack!** Grab yours now before it's gone!
+
+#LeopardLove #WildStyle #FierceFashion #MustHave #AddToCart
+
 
 
 
