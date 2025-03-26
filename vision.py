@@ -1,32 +1,38 @@
+PATH: str = "model.png"
 
-# Imports the Google Cloud client library
-from google.cloud import vision
+def detect_labels(path):
+    """Detects labels in the file."""
+    from google.cloud import vision
 
-
-
-def run_quickstart() -> vision.EntityAnnotation:
-    """Provides a quick start example for Cloud Vision."""
-
-    # Instantiates a client
     client = vision.ImageAnnotatorClient()
 
-    # The URI of the image file to annotate
-    file_uri = "gs://cloud-samples-data/vision/label/wakeupcat.jpg"
+    with open(path, "rb") as image_file:
+        content = image_file.read()
 
-    image = vision.Image()
-    image.source.image_uri = file_uri
+    image = vision.Image(content=content)
 
-    # Performs label detection on the image file
     response = client.label_detection(image=image)
     labels = response.label_annotations
-
     print("Labels:")
+
     for label in labels:
         print(label.description)
 
-    return labels
+
+    objects = client.object_localization(image=image).localized_object_annotations
+
+    print(f"Number of objects found: {len(objects)}")
+    for object_ in objects:
+        print(f"\n{object_.name} (confidence: {object_.score})")
+        print("Normalized bounding polygon vertices: ")
+        for vertex in object_.bounding_poly.normalized_vertices:
+            print(f" - ({vertex.x}, {vertex.y})")
+
+    if response.error.message:
+        raise Exception(
+            "{}\nFor more info on error messages, check: "
+            "https://cloud.google.com/apis/design/errors".format(response.error.message)
+        )
 
 
-
-
-run_quickstart()
+detect_labels(PATH)

@@ -206,6 +206,8 @@ $ python app.py --text "Generate a uniform inspired by the provided three refere
 
 **Objective**: Detect objects on the image and prepare list with name and description for each of them.
 
+## gemini-flash (image generation)
+
 ```python
 $ python app.py --text "Can you detect all clothing object then make a list and with name and short description?"  --file ai_v1k1nvfn.png 
 ```
@@ -226,6 +228,96 @@ line and a gathered or pleated bodice. It has a flowy skirt with a tiered ruffle
 4. **Sunglasses:** Round, dark-lensed sunglasses with a metallic or light-colored frame.
 ```
 
+## Cloud API (basic OCR)
 
+```python
+$ python vision.py
+```
 
+## Input
 
+![](https://i.postimg.cc/NFZ5V8pG/ai-v1k1nvfn.png)
+
+## Output
+
+**[Labels](https://cloud.google.com/vision/docs/labels):**
+
+```
+Labels:
+Day Dress
+One-piece garment
+Dress
+Waist
+Design
+Pattern
+Cocktail dress
+```
+
+**[Multi object detection](https://cloud.google.com/vision/docs/object-localizer):**
+
+```
+Number of objects found: 9
+
+Dress (confidence: 0.8584533929824829)
+Normalized bounding polygon vertices:
+ - (0.2392578125, 0.1591796875)
+ - (0.58984375, 0.1591796875)
+ - (0.58984375, 0.87109375)
+ - (0.2392578125, 0.87109375)
+
+Shoe (confidence: 0.8103800415992737)
+Normalized bounding polygon vertices:
+ - (0.474609375, 0.88671875)
+ - (0.58984375, 0.88671875)
+ - (0.58984375, 0.96484375)
+ - (0.474609375, 0.96484375)
+
+Person (confidence: 0.7671244740486145)
+Normalized bounding polygon vertices:
+ - (0.2373046875, 0.01190185546875)
+ - (0.62109375, 0.01190185546875)
+ - (0.62109375, 0.9609375)
+ - (0.2373046875, 0.9609375)
+
+Shoe (confidence: 0.765850305557251)
+Normalized bounding polygon vertices:
+ - (0.392578125, 0.890625)
+ - (0.47265625, 0.890625)
+ - (0.47265625, 0.9609375)
+ - (0.392578125, 0.9609375)
+
+Sun hat (confidence: 0.7423604726791382)
+Normalized bounding polygon vertices:
+ - (0.3515625, 0.0120849609375)
+ - (0.5859375, 0.0120849609375)
+ - (0.5859375, 0.1337890625)
+ - (0.3515625, 0.1337890625)
+
+Sandal (confidence: 0.6724427342414856)
+Normalized bounding polygon vertices:
+ - (0.474609375, 0.88671875)
+ - (0.58984375, 0.88671875)
+ - (0.58984375, 0.96484375)
+ - (0.474609375, 0.96484375)
+
+Fedora (confidence: 0.6303778886795044)
+Normalized bounding polygon vertices:
+ - (0.3515625, 0.0120849609375)
+ - (0.5859375, 0.0120849609375)
+ - (0.5859375, 0.1337890625)
+ - (0.3515625, 0.1337890625)
+
+Person (confidence: 0.6223903894424438)
+Normalized bounding polygon vertices:
+ - (0.2373046875, 0.01190185546875)
+ - (0.62109375, 0.01190185546875)
+ - (0.62109375, 0.9609375)
+ - (0.2373046875, 0.9609375)
+
+Hat (confidence: 0.6047825217247009)
+Normalized bounding polygon vertices:
+ - (0.3515625, 0.0120849609375)
+ - (0.5859375, 0.0120849609375)
+ - (0.5859375, 0.1337890625)
+ - (0.3515625, 0.1337890625)
+```
