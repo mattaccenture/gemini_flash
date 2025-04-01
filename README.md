@@ -321,3 +321,28 @@ Normalized bounding polygon vertices:
  - (0.5859375, 0.1337890625)
  - (0.3515625, 0.1337890625)
 ```
+
+# Case #12 Model's change clothing road
+
+
+## Dress
+
+| ![](https://i.ibb.co/1fQ2sD1M/model4.jpg) | ![](https://i.ibb.co/9HWRcXT9/1.jpg) | 
+|---------------------------------------------------|--------------------------------------------------|
+
+## Output
+
+![](https://i.ibb.co/Z6hxkfmZ/ai-s14qljw.png)
+
+## Boots
+
+
+| ![](https://i.ibb.co/Z6hxkfmZ/ai-s14qljw.png) | ![](https://i.ibb.co/95m2KnK/2.jpg) | 
+|---------------------------------------------------|--------------------------------------------------|
+
+## Output
+
+![](https://i.ibb.co/Y4HbvB49/ai-ozyaygj0.png)
+
+
+
