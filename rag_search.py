@@ -63,8 +63,6 @@ def query_index(
   
     results = []
     for neighbor in response[0]:  
-
-
         results.append({
             "id": neighbor.id,
             "distance": neighbor.distance,

@@ -13,6 +13,15 @@ SPIDER_MODULES = ["fashion.spiders"]
 NEWSPIDER_MODULE = "fashion.spiders"
 
 
+# GCS Buckets
+# Dodaj te ustawienia
+ITEM_PIPELINES = {
+    'fashion.pipelines.GCSUploadPipeline': 200, # Second
+    'fashion.pipelines.DuplicatesPipeline': 100, # First
+}
+
+GCS_BUCKET_NAME = 'acn-daipl-fashion-products'  # Nazwa twojego bucketu w GCP
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "fashion (+http://www.yourdomain.com)"
 

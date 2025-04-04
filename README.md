@@ -1,3 +1,4 @@
+
 # Gemini Testing for AI in Fashion
 
 This document showcases the testing of Gemini, an AI tool, for various fashion-related use cases. The goal is to demonstrate how AI can enhance and transform fashion imagery, including outfit generation, background changes, product placement, and 3D modeling. These tests are intended to be presented to product owners in a corporate setting to highlight the potential of AI in the fashion industry.
@@ -7,7 +8,7 @@ This document showcases the testing of Gemini, an AI tool, for various fashion-r
 
 
 
-## Case #1: Put Clothes on the Model  
+## Case #1: Generate model from reference clothing images
 **Objective:** Dress the model in specified clothing items while maintaining realism, professional style, and the original silhouette. The background and model's face should remain unchanged.
 
 
@@ -16,13 +17,13 @@ $ python app.py --text "Put these jeans and shirt on the model, make it super re
 ```
 
 ## Input
-
-| ![Jeans](https://i.postimg.cc/Zn24sB9m/jeans.jpg) | ![Model](https://i.postimg.cc/pV6WL7sS/model.jpg) | ![Shirt](https://i.postimg.cc/nc9Hjk5h/shirt.jpg) |
-|---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
+| --- | --- |
+| --- | --- |
+| ![](https://i.ibb.co/rfw7c7Jj/basic1.jpg) | ![](https://i.ibb.co/vxrTs6MH/basic2.jpg)  |
 
 ## Output
 
-![](https://i.postimg.cc/wM79kcjF/ai-dhy4igla.png
+![](https://i.ibb.co/Rkz91dcZ/clothing.png
 )
 
 ## Case #2: Background Change
@@ -33,14 +34,14 @@ $ python app.py --text "Put these jeans and shirt on the model, make it super re
 $ python app.py --text "Change background to forest, sunrise, vibrant" --files model2.jpeg 
 ```
 
-## Input
+| Input | Output |
+| --- | --- |
+| ![](https://i.ibb.co/Cp63WxRR/model7.jpg) | ![](https://i.ibb.co/99KDqfTQ/background1.png) |
 
-![](https://i.postimg.cc/3NBcfWtR/model2.jpg)
 
 
-## Output
 
-![](https://i.postimg.cc/zBTMWxWT/ai-13d-cldn.png))
+
 
 ## Case #3 Place fashion products
 
@@ -50,13 +51,11 @@ $ python app.py --text "Change background to forest, sunrise, vibrant" --files m
 $ python app.py --text "Put sunglasses and hat on the model" --files model2.jpeg 
 ```
 
-## Input
+| Input | Output |
+| --- | --- |
+| ![](https://i.postimg.cc/3NBcfWtR/model2.jpg) | ![](https://i.postimg.cc/NFZ5V8pG/ai-v1k1nvfn.png) |
 
-![](https://i.postimg.cc/3NBcfWtR/model2.jpg)
 
-## Output
-
-![](https://i.postimg.cc/NFZ5V8pG/ai-v1k1nvfn.png)
 
 ## Case #4: Change model's face
 
@@ -65,14 +64,9 @@ $ python app.py --text "Put sunglasses and hat on the model" --files model2.jpeg
 ```python
 $ python app.py --text "Change model face's to asian and color hair's to blue" --files model2.jpeg
 ```
-
-## Input
-
-![](https://i.postimg.cc/3NBcfWtR/model2.jpg)
-
-## Output
-
-![](https://i.postimg.cc/RZNfVRWR/ai-2ncw9iqc.png)
+| Input | Output |
+| --- | --- |
+| ![](https://i.postimg.cc/HkF95K5n/model3.jpg) | ![](https://i.ibb.co/JFC0fsPm/face-change.png) |
 
 ## Case #5: Change Clothing Color
 
@@ -82,13 +76,9 @@ $ python app.py --text "Change model face's to asian and color hair's to blue" -
 $ python app.py --text "Change t-shirt color to #8a00e6" --files model3.jpeg  
 ```
 
-## Input
-
-![](https://i.postimg.cc/HkF95K5n/model3.jpg)
-
-## Output
-
-![](https://i.postimg.cc/MTS03Q98/ai-lon5kn1d.png)
+| Input | Output |
+| --- | --- |
+| ![](https://i.postimg.cc/HkF95K5n/model3.jpg) | ![](https://i.postimg.cc/MTS03Q98/ai-lon5kn1d.png) |g)
 
 ## Case 6: Put object on the clothing
 
@@ -98,13 +88,10 @@ $ python app.py --text "Change t-shirt color to #8a00e6" --files model3.jpeg
 $ python app.py --text "Put face gandalf logo on the t-shirt" --files model3.jpeg  
 ```
 
-## Input
+| Input | Output |
+| --- | --- |
+| ![](https://i.postimg.cc/HkF95K5n/model3.jpg) | ![](https://i.postimg.cc/vTcNbKVs/ai-k7fd9gnn.png) |
 
-![](https://i.postimg.cc/HkF95K5n/model3.jpg)
-
-## Output
-
-![](https://i.postimg.cc/vTcNbKVs/ai-k7fd9gnn.png)
 
 ## Case 7: 3D Object Creation
 
@@ -114,13 +101,9 @@ $ python app.py --text "Put face gandalf logo on the t-shirt" --files model3.jpe
 $ python app.py --text "Make this 3D, visible from top point, perfect for website online shopping for quick check how the clothing looks like in 3d"  --file jacket.jpeg    
 ```
 
-## Input
-
-![Jeans](https://i.postimg.cc/KcwQVqL6/jacket.jpg)
-
-## Output
-
-![](https://i.postimg.cc/rsrpPPTy/ai-muuewq44.png)
+| Input | Output |
+| --- | --- |
+| ![Jeans](https://i.postimg.cc/KcwQVqL6/jacket.jpg) | ![](https://i.postimg.cc/rsrpPPTy/ai-muuewq44.png) |
 
 ## Case #8: Generate description and hashtags
 
@@ -158,13 +141,11 @@ $ python app.py --text "Breathtaking elven wedding gown inspired by Lord of the 
 
 ```
 
-## Input
+| Input | Output |
+| --- | --- |
+| ![](https://i.ibb.co/BHx59dyZ/sketch.jpg) | ![](https://i.ibb.co/k6BgBsPM/test.png) |
 
-![](https://i.postimg.cc/bN5WdnYc/sketch.png)
 
-## Output
-
-![](https://i.postimg.cc/qvCYK7gt/ai-ouclo1pw.png)
 
 ## Case #10 Fabric To Product
 
@@ -175,13 +156,9 @@ $ python app.py --text "Breathtaking elven wedding gown inspired by Lord of the 
 $ python app.py --text "Generate a high-quality hoodie using the provided Gondor-inspired fabric texture. The design should feature: a tailored fit with structured shoulders, elongated hood with subtle elven-inspired points, fabric draping that shows the texture's White Tree motif prominently on the chest, silver-thread embroidery along seams resembling Númenórean fortifications, functional lacing at neckline with metallic aglets, and integrated fabric belt at waist. Maintain the original fabric's color palette (pearl white, navy, silver) while adding realistic cloth physics for movement. Photorealistic 8K render on a male model with noble posture, slightly weathered look to suggest practical use, background blurred to focus on garment details." --files ai_ffxtxfzx.png
 ```
 
-## Input
-
-![](https://i.postimg.cc/pyNsPfxP/ai-ffxtxfzx.png)
-
-## Output
-
-![](https://i.postimg.cc/43NRCgBB/ai-ha1s7n8e.png)
+| Input | Output |
+| --- | --- |
+| ![](https://i.ibb.co/LhnrQb9N/fabric.png) | ![](https://i.ibb.co/7d0cJBHs/fabric-dress.png) |
 
 ## Case #11 Reference Images To Single Product
 
@@ -193,16 +170,16 @@ $ python app.py --text "Generate a uniform inspired by the provided three refere
 ```
 
 ## Input
-
-| ![assassin](https://i.postimg.cc/Kjkyqhm4/assassin.jpg) | ![dune](https://i.postimg.cc/nzwJGhb6/dune.jpg) | ![jedi](https://i.postimg.cc/RF0mtn87/jedi.png) |
-|---------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
+| --- | --- |
+| --- | --- |
+| ![](https://i.ibb.co/Cp63WxRR/model7.jpg)  | ![](https://i.ibb.co/xqKchn1Z/model13.jpg) |
 
 ## Output
 
-![](https://i.postimg.cc/jdfbyT8F/ai-r59a-6ep.png)
+![](https://i.ibb.co/nqfsjM79/combine.png)
 
 
-# Case #11 Object detection
+# Case #12 Object detection
 
 **Objective**: Detect objects on the image and prepare list with name and description for each of them.
 
@@ -343,6 +320,10 @@ Normalized bounding polygon vertices:
 ## Output
 
 ![](https://i.ibb.co/Y4HbvB49/ai-ozyaygj0.png)
+
+
+
+
 
 
 

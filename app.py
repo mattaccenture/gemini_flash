@@ -2,12 +2,12 @@ import os
 import tempfile
 import argparse
 import pathlib
+import subprocess
 import requests
 from google import genai
 from google.genai import types
 
-MODEL = "gemini-2.0-flash-exp-image-generation"
-
+MODEL = "gemini-2.0-flash-exp"
 
 def save_binary_file(file_name, data):
     with open(file_name, "wb") as f:
@@ -27,14 +27,20 @@ def upload_files(client, file_paths):
     return uploaded_files
 
 
-def generate_content(client, prompt, uploaded_files): 
+def generate_content(client, prompt, uploaded_files, show=False): 
+    user_prompt = f"""
+
+            {prompt}
+
+    """
+
+    print(f"Using prompt: {user_prompt}")
+
     contents = [prompt]
     contents.extend(uploaded_files)
 
     generate_content_config = types.GenerateContentConfig(
             temperature=1,
-            top_p=0.95,
-            top_k=40,
             max_output_tokens=8192,
             response_modalities=[
                 "image",
@@ -67,7 +73,10 @@ def generate_content(client, prompt, uploaded_files):
 
     print("Finished")
     
+    if show:
+        print(f"Opening {file_name}")
 
+        subprocess.run(["xdg-open", file_name])
 
 def _get_api_key():
     if api_key := os.environ.get("GEMINI_API_KEY"):
@@ -82,15 +91,18 @@ def main():
     parser = argparse.ArgumentParser(description="Generuj zawartość za pomocą Gemini API.")
     parser.add_argument("--text", type=str, required=True, help="Prompt do generowania zawartości.")
     parser.add_argument("--files", nargs="+", required=False, default=[], help="Ścieżki do plików lub URL.")
+    parser.add_argument("--show", default=False, action="store_true")
+    
     args = parser.parse_args()
 
     client = genai.Client(api_key=api_key)
 
     uploaded_files = upload_files(client, args.files)
 
-    result = generate_content(client, args.text, uploaded_files)
-    print(result)
-
+    generate_content(client, args.text, uploaded_files, args.show)
 
 if __name__ == "__main__":
     main()
+
+
+

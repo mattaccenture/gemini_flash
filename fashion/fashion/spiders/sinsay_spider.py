@@ -2,13 +2,15 @@ import scrapy
 import json
 from urllib.parse import urlencode
 
+PAGE_SIZE: int = 1000
+
 class SinsayAPISpider(scrapy.Spider):
     name = "sinsay"
     custom_settings = {
         'CONCURRENT_REQUESTS': 10,
         'DOWNLOAD_DELAY': 0.25,
         'RETRY_TIMES': 3,
-        'FEED_EXPORT_FIELDS': ['id', 'sku', 'photoDescription', 'image_url', 'name', 'url'],
+        'FEED_EXPORT_FIELDS': ['id', 'sku', 'photoDescription', 'image_url', 'name', 'url', 'price'],
         'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
     }
 
@@ -33,13 +35,13 @@ class SinsayAPISpider(scrapy.Spider):
             base_url = response.meta['base_url']
             base_params = response.meta['base_params']
 
-            for offset in range(0, total_products, 100):
+            for offset in range(0, total_products, PAGE_SIZE):
                 yield scrapy.Request(
-                    url=f"{base_url}?{urlencode({**base_params, 'offset': offset, 'pageSize': 100})}",
+                    url=f"{base_url}?{urlencode({**base_params, 'offset': {offset}, 'pageSize': {PAGE_SIZE}})}",
                     callback=self.parse_products
                 )
         except json.JSONDecodeError:
-            self.logger.error("Błąd parsowania odpowiedzi API")
+            self.logger.error("API Error")
 
     def parse_products(self, response):
         try:
@@ -52,13 +54,13 @@ class SinsayAPISpider(scrapy.Spider):
                     'photoDescription': product.get('photoDescription', ''),
                     'image_url': self.extract_original_image(product),
                     'name': product.get('name'),
-                    'url': product.get('url')
+                    'url': product.get('url'),
+                    'price': product.get('price'),
                 }
         except json.JSONDecodeError:
-            self.logger.error(f"Błąd parsowania produktów: {response.url}")
+            self.logger.error(f"Failed to parse: {response.url}")
 
     def extract_original_image(self, product):
-        """Wyciąga pierwszy oryginalny obrazek z galerii"""
         if not product.get('gallery'):
             return None
             
